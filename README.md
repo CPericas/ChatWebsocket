@@ -1,4 +1,5 @@
 Simple WebSocket Chat Application
+
 This is a real-time chat application built using Python (with Flask-SocketIO) on the backend and React with TypeScript and Bootstrap on the frontend.
 Users can send and receive messages instantly, filter messages by username, and see timestamps for each message.
 
@@ -17,11 +18,16 @@ Features
 
 Tech Stack
 
-Frontend	                Backend
-React.js (TypeScript)	    Python (Flask-SocketIO)
-Bootstrap	                Flask
-React-Bootstrap	          WebSocketServer (Custom Wrapper)
+Frontend:                
+React.js (TypeScript)	    
+Bootstrap	                
+React-Bootstrap	          
 Vite 
+
+Backend:
+Python (Flask-SocketIO)
+Flask
+WebSocketServer (Custom Wrapper)
 
 How It Works
 1. Server Side (server.py)
