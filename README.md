@@ -1,49 +1,38 @@
-Simple WebSocket Chat Application
+# Simple WebSocket Chat Application
 
-This is a real-time chat application built using Python (with Flask-SocketIO) on the backend and React with TypeScript and Bootstrap on the frontend.
-Users can send and receive messages instantly, filter messages by username, and see timestamps for each message.
+Simple WebSocket Chat Application is a real-time chat app that enables users to send and receive messages instantly using WebSockets. The backend is built with Python (Flask-SocketIO), and the frontend uses React, TypeScript, and Bootstrap.
 
-Features
-🔹 Real-time messaging using WebSocket protocol
+## Features
 
-🔹 Username filtering to search chat history easily
+- **Real-time messaging** using WebSocket protocol
+- **Username filtering** to search chat history easily
+- **Timestamped messages** for real-time context
+- **Responsive UI**, built with React-Bootstrap, adjusts seamlessly across various screen sizes
+- **Type safety** using TypeScript
+- **Backend** powered by Flask-SocketIO
 
-🔹 Timestamped messages
+## Tech Stack
 
-🔹 Responsive UI with React-Bootstrap
+**Frontend:**
+- React.js (TypeScript)
+- Bootstrap
+- React-Bootstrap
+- Vite
 
-🔹 Built with TypeScript for type safety
+**Backend:**
+- Python (Flask-SocketIO)
+- Flask WebSocketServer (Custom Wrapper)
 
-🔹 Backend powered by Flask-SocketIO
+## How It Works
 
-Tech Stack
+### Server Side (server.py)
+- A Flask app is initialized using `WebSocketServer`.
+- Handles three WebSocket events:
+  - `connect`: Logs when a user connects.
+  - `disconnect`: Logs when a user disconnects.
+  - `message`: Receives a message (with username and text), attaches a timestamp, and broadcasts it to all connected clients.
 
-Frontend:                
-React.js (TypeScript)	    
-Bootstrap	                
-React-Bootstrap	          
-Vite 
+### Frontend Components
 
-Backend:
-Python (Flask-SocketIO)
-Flask
-WebSocketServer (Custom Wrapper)
-
-How It Works
-1. Server Side (server.py)
-A Flask app is initialized using WebSocketServer.
-
-Handles three WebSocket events:
-
-connect: Logs when a user connects.
-
-disconnect: Logs when a user disconnects.
-
-message: Receives a message (with username and text), attaches a timestamp, and broadcasts it to all connected clients.
-
-2. Frontend Components
-SimpleMessageInput.tsx:
-Users input their username and type a message. Messages are sent via WebSocket when clicking the button or pressing Enter.
-
-SimpleChatBody.tsx:
-Displays all incoming messages. Users can filter messages by username using a search bar.
+- **SimpleMessageInput.tsx**: A component where users can input their username and type a message. The message is sent via WebSocket when the 'Send' button is clicked or the 'Enter' key is pressed.
+- **SimpleChatBody.tsx**: Displays all incoming messages. It includes a search bar to filter messages by username, allowing users to review past messages more easily.
